@@ -1,21 +1,21 @@
 package home_work.services;
 
 import lombok.Getter;
-import org.springframework.util.ResourceUtils;
+import org.springframework.core.io.ClassPathResource;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 @Getter
 public class CsvReaderImpl implements CsvReader{
 
-    private final File fileWithQuestions;
+    private final ClassPathResource fileWithQuestions;
     private final Scanner scanner;
 
-    public CsvReaderImpl(String fileName) throws FileNotFoundException {
-        this.fileWithQuestions = ResourceUtils.getFile("classpath:" + fileName);
-        this.scanner = new Scanner(fileWithQuestions).useDelimiter("\n");
+    public CsvReaderImpl(String fileName) throws IOException {
+        this.fileWithQuestions = new ClassPathResource(fileName);
+//        this.scanner = new Scanner(fileWithQuestions.getFile()).useDelimiter("\n");
+        this.scanner = new Scanner(fileWithQuestions.getInputStream()).useDelimiter("\n");
     }
 
 }

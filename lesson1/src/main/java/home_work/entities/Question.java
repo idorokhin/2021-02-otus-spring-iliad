@@ -1,4 +1,4 @@
-package home_work.Entities;
+package home_work.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

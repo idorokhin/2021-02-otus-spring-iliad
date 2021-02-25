@@ -1,6 +1,6 @@
 package home_work.daos;
 
-import home_work.Entities.Question;
+import home_work.entities.Question;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
